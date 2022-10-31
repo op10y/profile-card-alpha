@@ -2,10 +2,11 @@
 body {
   font-family: "Nunito", sans-serif;
   color: black;
-  min-height: 50vh;
+  min-height: 100vh;
   padding: 2rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 body::before {
@@ -16,8 +17,9 @@ body::before {
   pointer-events: none;
   background: url("cbpnk.webp") no-repeat center;
   background-size: cover;
+  width: 100%;
   -webkit-animation: backgroundZoomAnimate 20s forwards;
-          animation: backgroundZoomAnimate 20s forwards;
+  animation: backgroundZoomAnimate 20s forwards;
 }
 
 @-webkit-keyframes backgroundZoomAnimate {
@@ -40,19 +42,25 @@ body::before {
 .profile-card {
   box-shadow: 0 18px 200px -60px black;
   border-radius: 50px;
-  width: 650px;
+  width: 450px;
   position: relative;
   -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: 2px solid rgba(255, 255, 255, 0.2509803922);
-  padding: 3rem 5rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
+  
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
   .profile-card {
     width: auto;
+  }
+}
+@media screen and (max-height: 1920px) {
+  .profile-card {
+    height: auto;
   }
 }
 .profile-card__img img {
@@ -61,10 +69,22 @@ body::before {
   height: 200px;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   box-shadow: 0 10px 60px -10px rgba(13, 28, 39, 0.5);
 }
+@media screen and (max-width: 1080px) {
+  .profile-card__img img {
+    width: auto;
+  }
+}
+
+@media screen and (max-height: 1920px) {
+  .profile-card__img img {
+    height: auto;
+  }
+}
+
 .profile-card__desc {
   text-align: center;
   display: flex;
@@ -72,18 +92,18 @@ body::before {
   gap: 5px;
 }
 .profile-card__desc h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .profile-card__desc h1 + div {
-  font-size: 20px;
+  font-size: 15px;
 }
 .profile-card__info {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 10px;
 }
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1000px) {
   .profile-card__info {
     gap: 10px;
   }
@@ -97,11 +117,11 @@ body::before {
 .profile-card__info > div > *:first-child {
   font-weight: bold;
   letter-spacing: 3px;
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 .profile-card__info > div > *:last-child {
-  font-size: 16px;
+  font-size: 10px;
   opacity: 0.7;
 }
 .profile-card__social {
@@ -112,9 +132,9 @@ body::before {
 }
 .profile-card__social a {
   display: inline-flex;
-  width: 55px;
-  height: 55px;
-  margin: 15px;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
   border-radius: 40%;
   align-items: center;
   justify-content: center;
@@ -123,14 +143,14 @@ body::before {
   flex-shrink: 0;
   transition: all 0.2s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 2000px) {
   .profile-card__social a {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 100px) {
   .profile-card__social a:hover {
     transform: scale(1.2) translateY(-5px);
   }
@@ -161,7 +181,7 @@ body::before {
   justify-content: center;
   gap: 2rem;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 2000px) {
   .profile-card__actions {
     flex-direction: column;
     gap: 1.5rem;
@@ -169,8 +189,8 @@ body::before {
 }
 .profile-card__actions > button {
   font-weight: bold;
-  font-size: 22px;
-  padding: 15px 0;
+  font-size: 15px;
+  padding: 10px 0;
   min-width: 250px;
   border-radius: 50px;
   text-align: center;
@@ -178,34 +198,36 @@ body::before {
   cursor: pointer;
   transition: all 0.2s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 2000px) {
   .profile-card__actions > button {
     min-width: 170px;
   }
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 2000px) {
   .profile-card__actions > button {
     min-width: inherit;
     width: 100%;
     max-width: 350px;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 100px) {
   .profile-card__actions > button:hover {
     transform: translateY(-5px);
   }
 }
+/*
 .profile-card__actions > button.blue1 {
   background: linear-gradient(-45deg, #1da1f2, #0e71c8);
   box-shadow: 0 4px 30px rgba(19, 127, 212, 0.4);
 }
 .profile-card__actions > button.blue1:hover {
   box-shadow: 0 7px 30px rgba(19, 127, 212, 0.75);
-}
+}*/
+
 .profile-card__actions > button.orange2 {
   background: linear-gradient(45deg, #d5135a, #f05924);
   box-shadow: 0 4px 30px rgba(223, 45, 70, 0.35);
 }
 .profile-card__actions > button.orange2:hover {
   box-shadow: 0 7px 30px rgba(223, 45, 70, 0.75);
-}/*# sourceMappingURL=style.css.map */
+}
